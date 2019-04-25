@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='EnterWelcome.js'></script>
+    <script src='compare.js'></script>
+    <script src='meunchange.js'></script> 
+    <script src="changecss.js"></script>
+    <script src="comparearr.js"></script>
+    
+<style>
+h2{margin:0;}
+#con{width: 300px;height:300px;background: bisque;}
+.active{background: yellow;}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+    <div id="demo1">
+        <h1>判斷文字框文字動作</h1>
+        <input id="txt" type="text" value="" placeholder="輸入姓名">
+        <input type="radio" name="sex" value="先生">先生
+        <input type="radio" name="sex" value="小姐">小姐
+        <input  id="btn" type="button"  value="進去" onclick="move()"/>
+        <p id="ans">歡迎光臨</p>
+    </div>
+<hr>
+<h1>選單變化</h1>
+<div id="demo2" onmousemove="meunchange()">
+    <input type="button" value="美食" class="active">
+    <input type="button" value="動漫">
+    <input type="button" value="新聞">
+    <input type="button" value="體育">
+    <div id="con"></div>
+</div>
+<hr>
+<h1>函數應用<h2>
+    <div id="demo3">
+        <input type="text" id="txt1">
+        <input type="text" id="txt2">
+        <input type="button" id="btn1" value="計算">
+        <p id="sum">總和:</p>
+    </div>
+<hr>
+<h1>樣式函式應用</h1>
+<input type="button" onclick="changecss()" value="顯示選單樣式數值">
+<h1>簡易陣列排序</h1>
+輸入數字<input type="text" id="num" value="">
+<input type="button" value="輸入" onclick="addarr()">
+<p id="show_arrcompare">排序:</p>
+<script>
+    var arr=[];
+    var show =document.getElementById('show_arrcompare');
+    var num=document.getElementById('num');
+    function addarr(){
+        arr.push(num.value);
+        console.log(arr);
+    show.innerHTML="排序:"+arr.sort(function(n1,n2){
+        return n1-n2;
+    });
+    
+    num.value="";
+    }
+    
+</script>
+</body>
+</html>
